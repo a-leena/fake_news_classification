@@ -1,5 +1,5 @@
 # Fake News Classification
-This project explores the problem of classifying news articles as *fake* or *real* using Natural Language Processing (NLP). The task is approached methodically starting with exploratory analysis, preprocessing, baseline models, and progressing to stronger models like neural networks and transformers.
+This project explores the problem of classifying news articles as *fake* or *real* using Natural Language Processing (NLP). The task is approached methodically starting with exploratory analysis, preprocessing, baseline machine learning models, and progressing to stronger neural network models.
 
 ## Dataset
 * Source: [Hugging Face](https://huggingface.co/datasets/Reyansh4/Fake-News-Classification)
@@ -29,4 +29,10 @@ This project explores the problem of classifying news articles as *fake* or *rea
     * Naive Bayes
     * Linear SVC (Support Vector Classifier)
 * With and without stylometric features
-* Result: Linear SVC with stylometric features performed best with 96.5% accuracy.
+* Result: Linear SVC with stylometric features performed best with **96.5%** accuracy.
+
+### 4. CNN
+* Word2Vec task-specific embeddings
+* Best embedding dimension and context window-size found by tuning
+* Result: Word2vec embeddings of dimension=300 using window=7 with CNN (without hyperparameter tuning) gave **96.7%** accuracy.
+* CNN will be tuned to obtain best hyperparamters.
