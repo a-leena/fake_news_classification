@@ -2,7 +2,7 @@
 This project explores the problem of classifying news articles as *fake* or *real* using Natural Language Processing (NLP). The approach is progressive, starting with exploratory analysis, preprocessing, and baseline machine learning models, and advancing to stronger neural network-based models, including CNNs, LSTMs, and Transformers.
 
 ## Dataset
-* Source: <a href="https://huggingface.co/datasets/Reyansh4/Fake-News-Classification" target="_blank"> Hugging Face</a>
+* Source: [Hugging Face](https://huggingface.co/datasets/Reyansh4/Fake-News-Classification)
 * Size: 20800 rows
 * Features: `title`, `author`, `text`
 * Target: `label` (0:Real, 1:Fake)
@@ -45,7 +45,7 @@ This project explores the problem of classifying news articles as *fake* or *rea
 * CNNs capture **local phrase-level patterns** but cannot model long-term sequential dependencies like LSTMS or Transformers
 * A **1D convolutional kernel of size n** acts as an **n-gram detector**
 * CNNs are tuned to find the best **hyperparamters** (number of layers, filters, kernel sizes, dense layer units, dropout rate, and learning rate)
-> These tuned CNNs serve as the neural network benchmark for comparison with sequential models
+> These tuned CNNs serve as the **neural network benchmark** for comparison with sequential models
 
 ### ⏭️ Next Steps
 * LSTM and BiLSTM models for capturing sequential dependencies
