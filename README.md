@@ -23,7 +23,7 @@ This project explores the problem of classifying news articles as *fake* or *rea
     * **Readability:** Flesch Readability Ease Score
 
 ### 3. Baseline Models
-* Feature extractions: **TF-IDF**
+* Feature extraction: **TF-IDF**
 * Models tested:
     * Logistic Regression
     * Naive Bayes
@@ -39,13 +39,13 @@ This project explores the problem of classifying news articles as *fake* or *rea
     * Embedding dimension = _  
     * Context window size = _
     * Maximum input length = _
-> These embeddings and inputs are later used in more complex CNN, LSTM, and Transformer models
+> These embeddings and inputs are later used in more complex CNN, LSTM, and Transformer models.
 
 ### 5. Convolutional Neural Networks (CNNs)
 * CNNs capture **local phrase-level patterns** but cannot model long-term sequential dependencies like LSTMS or Transformers
 * A **1D convolutional kernel of size n** acts as an **n-gram detector**
 * CNNs are tuned to find the best **hyperparamters** (number of layers, filters, kernel sizes, dense layer units, dropout rate, and learning rate)
-> These tuned CNNs serve as the **neural network benchmark** for comparison with sequential models
+> These tuned CNNs serve as the **neural network benchmark** for comparison with sequential models.
 
 ### ⏭️ Next Steps
 * LSTM and BiLSTM models for capturing sequential dependencies
