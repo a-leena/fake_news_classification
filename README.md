@@ -1,38 +1,53 @@
 # Fake News Classification
-This project explores the problem of classifying news articles as *fake* or *real* using Natural Language Processing (NLP). The task is approached methodically starting with exploratory analysis, preprocessing, baseline machine learning models, and progressing to stronger neural network models.
+This project explores the problem of classifying news articles as *fake* or *real* using Natural Language Processing (NLP). The approach is progressive, starting with exploratory analysis, preprocessing, and baseline machine learning models, and advancing to stronger neural network-based models, including CNNs, LSTMs, and Transformers.
 
 ## Dataset
-* Source: [Hugging Face](https://huggingface.co/datasets/Reyansh4/Fake-News-Classification)
+* Source: <a href="https://huggingface.co/datasets/Reyansh4/Fake-News-Classification" target="_blank"> Hugging Face</a>
 * Size: 20800 rows
-* Features: title, author, text
-* Target: label (0:Real, 1:Fake)
+* Features: `title`, `author`, `text`
+* Target: `label` (0:Real, 1:Fake)
 
 ## Workflow
 ### 1. Data Preprocessing
-* Handling missing data and duplicates
-* Cleaning text (quotes, contractions, punctuation, whitespace, case normalization)
-* Tokenization and lemmatization (using nltk)
+* Handle missing values and duplicates
+* Clean text (normalize quotes, expand contractions, strip punctuation and whitespace, normalize case)
+* Tokenization and lemmatization using **NLTK**
 
 ### 2. Exploratory Analysis & Feature Extraction
 * Class distribution
-* Top unigrams, bigrams, trigrams
-* Unigram Word clouds for Fake vs Real
-* Stylometric feature extraction and distributions
-    * Lexical features: average word length, vocabulary richness
-    * Syntactic features: average sentence length, punctuation ratios, POS ratios
-    * Readability metrics: Flesch Readability Ease Score
+* Most frequent unigrams, bigrams, and trigrams
+* Word clouds for Fake vs Real news articles
+* Stylometric features:
+    * **Lexical:** average word length, vocabulary richness
+    * **Syntactic:** average sentence length, punctuation ratios, POS ratios
+    * **Readability:** Flesch Readability Ease Score
 
 ### 3. Baseline Models
-* TF-IDF features
-* Models:
+* Feature extractions: **TF-IDF**
+* Models tested:
     * Logistic Regression
     * Naive Bayes
     * Linear SVC (Support Vector Classifier)
-* With and without stylometric features
-* Result: Linear SVC with stylometric features performed best with **96.5%** accuracy.
+* Experiments conducted with and without stylometric features
+* **Result:** Linear SVC with stylometric features performed best, achieving **96.5%** accuracy.
+> ✅ This serves as the **baseline** for comparison with neural network models.
 
-### 4. CNN
-* Word2Vec task-specific embeddings
-* Best embedding dimension and context window-size found by tuning
-* Result: Word2vec embeddings of dimension=300 using window=7 with CNN (without hyperparameter tuning) gave **96.7%** accuracy.
-* CNN will be tuned to obtain best hyperparamters.
+### 4. Word Embeddings
+* A **Word2Vec** model is trained on the training set to obtain **task-specific embeddings**
+* Simple CNN model is used to **tune hyperparameters** (embedding dimension, context window size, maximum input length) efficiently
+* **Result:** 
+    * Embedding dimension = _  
+    * Context window size = _
+    * Maximum input length = _
+> These embeddings and inputs are later used in more complex CNN, LSTM, and Transformer models
+
+### 5. Convolutional Neural Networks (CNNs)
+* CNNs capture **local phrase-level patterns** but cannot model long-term sequential dependencies like LSTMS or Transformers
+* A **1D convolutional kernel of size n** acts as an **n-gram detector**
+* CNNs are tuned to find the best **hyperparamters** (number of layers, filters, kernel sizes, dense layer units, dropout rate, and learning rate)
+> These tuned CNNs serve as the neural network benchmark for comparison with sequential models
+
+### ⏭️ Next Steps
+* LSTM and BiLSTM models for capturing sequential dependencies
+* Pretrained embeddings (e.g., GloVe, FastText) for transfer learning
+* Transformer-based architectures (e.g., BERT) for state-of-the-art performance
